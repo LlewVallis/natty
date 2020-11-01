@@ -204,8 +204,6 @@ public class Parser {
 
       // we only continue if a meaningful syntax tree has been built
       if(tree.getChildCount() > 0) {
-        _logger.info("PARSE: " + tokenString.toString());
-
         // rewrite the tree (temporary fix for http://www.antlr.org/jira/browse/ANTLR-427)
         CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
         TreeRewrite s = new TreeRewrite(nodes);
@@ -218,7 +216,6 @@ public class Parser {
         walker.setReferenceDate(referenceDate);
         walker.getState().setDefaultTimeZone(_defaultTimeZone);
         walker.parse();
-        _logger.info("AST: " + tree.toStringTree());
 
         // run through the results and append the parse information
         group = walker.getState().getDateGroup();
@@ -307,17 +304,9 @@ public class Parser {
       addGroup(currentGroup, groups);
     }
     
-    _logger.info("STREAM: " + tokenString.toString());
     List<TokenStream> streams = new ArrayList<TokenStream>();
     for(List<Token> group:groups) {
       if(!group.isEmpty()) {
-        StringBuilder builder = new StringBuilder();
-        builder.append("GROUP: ");
-        for (Token token : group) {
-          builder.append(DateParser.tokenNames[token.getType()]).append(" ");
-        }
-        _logger.info(builder.toString());
-
         streams.add(new CommonTokenStream(new NattyTokenSource(group)));
       }
     }

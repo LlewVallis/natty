@@ -71,13 +71,40 @@ MORNING   : 'morning';
 EVENING   : 'evening' | 'eve';
 NIGHT     : 'night'; 
 
-UTC  : 'utc'  | 'gmt'  | 'z';
-EST  : 'est'  | 'edt'  | 'et'  | 'eastern';
-PST  : 'pst'  | 'pdt'  | 'pt'  | 'pacific';
-CST  : 'cst'  | 'cdt'  | 'ct'  | 'central';
-MST  : 'mst'  | 'mdt'  | 'mt'  | 'mountain';
-AKST : 'akst' | 'akdt' | 'akt' | 'alaska';
-HAST : 'hast' | 'hadt' | 'hat' | 'hst' | 'hawaii';
+UTC  : 'utc';
+GMT  : 'gmt';
+Z    : 'z';
+BST  : 'bst';
+IST  : 'ist';
+WET  : 'wet';
+WEST : 'west';
+CET  : 'cet';
+CEST : 'cest';
+EET  : 'eet';
+EEST : 'eest';
+MSK  : 'msk';
+MSD  : 'msd';
+AST  : 'ast';
+ADT  : 'adt';
+EST  : 'est';
+EDT  : 'edt';
+CST  : 'cst';
+CDT  : 'cdt';
+MST  : 'mst';
+MDT  : 'mdt';
+PST  : 'pst';
+PDT  : 'pdt';
+HST  : 'hst';
+AKST : 'akst';
+AKDT : 'akdt';
+AEST : 'aest';
+AEDT : 'aedt';
+ACST : 'acst';
+ACDT : 'acdt';
+AWST : 'awst';
+HKT  : 'hkt';
+JST  : 'jst';
+
 
 // ********* numeric rules **********
 
